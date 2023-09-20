@@ -4,6 +4,6 @@
 - [x] installing and setting up tailwinds
 - [x] installing and setting up react router
 - [] installing and setting up firebase
-- [] make reusable input component
-- [] make reusable button
+- [x] make reusable input component
+- [x] make reusable button
 - [] make register component and validation
