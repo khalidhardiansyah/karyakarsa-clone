@@ -23,7 +23,7 @@ function Input({type, name, id, placeholder,labelinput, validation_message, icon
             </div>
         </div>
     </div>
-    <input className={`form-input rounded-sm pt-7 w-full h-14 border-0 ring-1 ring-secondary focus:ring-red-500 ${placeholder ? 'pl-28': 'pl-3'}`} type={type} name={name} id={id} onFocus={()=>setFocus(true)} onBlur={()=>setFocus(false)}/>
+    <input  className={`form-input rounded-sm pt-7 w-full h-14 border-0 ring-1 ring-secondary focus:ring-red-500 ${placeholder ? 'pl-28': 'pl-3'}`} type={type} name={name} id={id} onFocus={()=>setFocus(true)} onBlur={()=>setFocus(false)}/>
   <div className="validation_message text-sm px-2 py-1 text-red-500">
     {validation_message}
   </div>
