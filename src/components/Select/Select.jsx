@@ -25,7 +25,7 @@ const creatorCategories = [
 const listCategories  = creatorCategories.map((category) =>(
     <option key={category.id} value={category.value} >{category.name}</option>
 ))
-function Select({name, id, placeholder,labelinput, validation_message, icon,}) {
+function Select({name, id, placeholder,labelinput, validation_message, icon, register, rules}) {
     const [select, setSelect] = useState();
     const [focus, setFocus] = useState(false);
     const [change, setChange] = useState(false);
@@ -50,13 +50,13 @@ function Select({name, id, placeholder,labelinput, validation_message, icon,}) {
             </div>
         </div>
     </div>
-     <select className={`form-input rounded-sm  w-full h-14 border-0 ring-1 ring-secondary focus:ring-red-500 ${select ? 'pt-6':''}`} name={name} id={id} onFocus={()=>setFocus(true)} onBlur={()=>setFocus(false)} onChange={(e)=>setSelect(e.target.value)} >
+     <select className={`form-input rounded-sm  w-full h-14 border-0 ring-1 ring-secondary focus:ring-red-500 ${select ? 'pt-6':''}`} name={name} id={id} onFocus={()=>setFocus(true)} onBlur={()=>setFocus(false)} onChange={(e)=>setSelect(e.target.value)} {...register(name, rules)}>
         <option value="">{labelinput}</option>
         {
             listCategories
         }
      </select>
-  <div className="validation_message text-sm px-2 py-1 text-red-500">
+  <div className="validation_message text-start text-sm px-2 py-1 text-red-500">
     {validation_message}
   </div>
 </label>

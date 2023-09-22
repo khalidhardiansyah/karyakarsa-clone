@@ -26,7 +26,7 @@ function Register() {
       Langkah {formActive} dari 2
       </h2>
     </div>
-    <div className="wrapper-parent border border-red-500 bg-white p-5 text-left w-full">
+    <div className="wrapper-parent bg-white p-5 text-left w-full">
       {
         renderActiveForm()
       }

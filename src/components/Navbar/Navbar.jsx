@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "../Button/Button";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 
 const pages = [
   {
@@ -21,7 +21,11 @@ const pages = [
   },
 ];
 
+
+
 function Navbar() {
+const navigate = useNavigate()
+
   const navigationItems = pages.map((page) => (
     <li key={page.id} className="border-b py-3 sm:border-b-0 sm:py-0 w-full text whitespace-nowrap">
       <Link className="px-5 sm:px-0 w-full block" to={page.path}>{page.name}</Link>
@@ -48,13 +52,13 @@ function Navbar() {
         </div>
 
         <div className="box-wraper-2 flex space-x-4 items-center">
-          <Button labelButton="Masuk" style="secondary" type="button" />
-          <Button labelButton="Jadi Kreator" style="primary" type="button" />
+          <Button onClick={()=>navigate('/login')}  labelButton="Masuk" style="secondary" type="button" />
+          <Button onClick={()=>navigate('/')}  labelButton="Jadi Kreator" style="primary" type="button" />
           <div className="block sm:hidden">
           <Button
             labelButton={<Bars3Icon className="h-6 w-6 text-secondary" />}
             style=""
-          onclick={()=>setMobileNav(true)}
+          onClick={()=>setMobileNav(true)}
           />
           </div>
         </div>
@@ -76,7 +80,7 @@ function Navbar() {
                 <Button
                   labelButton={<XMarkIcon className="h-6 w-6 text-secondary" />}
                   style=""
-                onclick={()=>setMobileNav(false)}
+                onClick={()=>setMobileNav(false)}
                 />
               </div>
             </div>

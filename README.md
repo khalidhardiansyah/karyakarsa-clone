@@ -7,9 +7,9 @@
 - [x] reusable input component
 - [x] reusable button
 - [x] register page
-- [] register form component and validation
-- [] login form component and validation
-- [] login page
+- [x] register form component and validation
+- [x] login form component and validation
+- [x] login page
 - [] dashboard page
 - [] overview page
 - [] karya page

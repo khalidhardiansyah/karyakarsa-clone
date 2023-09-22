@@ -1,9 +1,12 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter,Navigate } from "react-router-dom";
 import About from "../views/About";
-import Home from "../views/Home";
 import Register from "../views/Register"
-import Navbar from "../components/Navbar/Navbar";
 import Layout from "../components/Layout/Layout";
+import Login from "../views/Login";
+import Dashboard from "../components/Layout/Dashboard";
+import OnBoarding from "../views/OnBoarding";
+import Overview from "../views/Overview";
+import Posts from "../views/Posts";
 const router = createBrowserRouter([
     {
         path:'/',
@@ -12,6 +15,35 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Register/>
+            },
+            {
+                path:'login',
+                element:<Login/>
+            },
+            {
+                path:"dashboard",
+                element:<Navigate to="onboarding"/>,
+                
+            },
+            {
+                path:"dashboard",
+                element:<Dashboard/>,
+                
+                children:[
+                    {
+                        
+                        path:'onboarding',
+                        element:<OnBoarding/>
+                    },
+                    {
+                        path:'overview',
+                        element: <Overview/>
+                    },
+                    {
+                        path:'posts',
+                        element: <Posts/>
+                    }
+                ]
             }
         ]
     },
