@@ -8,11 +8,10 @@ function Layout() {
     <div className="flex flex-col min-h-screen">
   <Navbar />
 
-  <div className="flex-grow w-full bg-ternary">
+  <div className="flex-grow w-full bg-ternary pb-24">
     <Outlet />
   </div>
-
-  <div className="flex-shrink-0 sm:bg-ternary">
+  <div className="flex-shrink-0 sm:bg-ternary ">
     <Footer />
   </div>
 </div>

@@ -10,6 +10,6 @@
 - [x] register form component and validation
 - [x] login form component and validation
 - [x] login page
-- [] dashboard page
-- [] overview page
-- [] karya page
+- [x] dashboard page
+- [x] overview page
+- [x] karya page

@@ -1,34 +1,31 @@
 import React, { useState } from 'react'
-const creatorCategories = [
-    {
-        id:1,
-        value:1,
-        name:'Penulis'
-    },
-    {
-        id:2,
-        value:2,
-        name:'Komik'
-    },
-    {
-        id:3,
-        value:3,
-        name:'Fotografer'
-    },
-    {
-        id:4,
-        value:4,
-        name:'Video'
-    },
-]
 
-const listCategories  = creatorCategories.map((category) =>(
-    <option key={category.id} value={category.value} >{category.name}</option>
-))
-function Select({name, id, placeholder,labelinput, validation_message, icon, register, rules}) {
+
+
+function Select({style,name, id, placeholder,labelinput, validation_message, categories,icon, register, rules, category_id,
+    category_value,
+    category_label,
+    }) {
     const [select, setSelect] = useState();
     const [focus, setFocus] = useState(false);
-    const [change, setChange] = useState(false);
+
+    const listCategories  = categories?.map((category) =>(
+        <option key={category[category_id]} value={category[category_value]} >{category[category_label]}</option>
+    ))
+
+    const selectStyle = () => {
+        if (style === 'primary') {
+          return 'h-14 ring-1 ring-secondary focus:ring-red-500';
+        }else if(style === 'secondary'){
+            return 'bg-white px-4 py-2 '
+        }else if(style === 'outline'){
+          return 'ring-0 focus:ring-0'
+      }
+      
+      };
+
+    
+
     return (
     <label htmlFor={name} className="w-full relative mb-2">
     <div className="wrapper-parent absolute flex justify-between w-full left-3 mt-1">
@@ -50,8 +47,10 @@ function Select({name, id, placeholder,labelinput, validation_message, icon, reg
             </div>
         </div>
     </div>
-     <select className={`form-input rounded-sm  w-full h-14 border-0 ring-1 ring-secondary focus:ring-red-500 ${select ? 'pt-6':''}`} name={name} id={id} onFocus={()=>setFocus(true)} onBlur={()=>setFocus(false)} onChange={(e)=>setSelect(e.target.value)} {...register(name, rules)}>
-        <option value="">{labelinput}</option>
+     <select className={`form-input rounded-sm  w-full mr-5 border-0  ${selectStyle()}  ${select ? 'pt-6':''}`} name={name} id={id} onFocus={()=>setFocus(true)} onBlur={()=>setFocus(false)} onChange={(e)=>setSelect(e.target.value)} {...register(name, rules)}>
+        {
+            labelinput && <option value="">{labelinput}</option>
+        }
         {
             listCategories
         }

@@ -9,10 +9,6 @@ function Dashboard() {
 <div className="flex-grow w-full p-5">
   <Outlet/>
 </div>
-
-{/* <div className="flex-shrink-0 sm:bg-ternary">
-  <Footer />
-</div> */}
 </div>
 
 

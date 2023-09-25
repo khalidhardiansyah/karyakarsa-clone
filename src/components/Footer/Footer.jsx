@@ -24,14 +24,14 @@ const footerNavigation = [
     },
 ]
 
+const printFooterNavigation = footerNavigation.map((footNav) =>(
+    <li key={footNav.id}>
+      <Link to={footNav.path}>{footNav.icon}</Link>
+    </li>
+))
 
 function Footer({}) {
 
-    const printFooterNavigation = footerNavigation.map((footNav) =>(
-        <li key={footNav.id}>
-          <Link to={footNav.path}>{footNav.icon}</Link>
-        </li>
-    ))
   return (
     <div className='fixed bottom-0 w-full h-16 bg-white sm:bg-transparent  flex flex-row sm:justify-center border-t-2 sm:border-t-0'>
         <ul className='flex justify-between w-full items-center mx-11 sm:w-[25rem]  sm:bg-gray-50 sm:shadow-xl sm:rounded-full sm:px-10 sm:mb-2'>

@@ -6,6 +6,28 @@ import Select from "../Select/Select";
 import { ExclamationCircleIcon } from "@heroicons/react/24/solid";
 import { useForm } from "react-hook-form";
 
+const creatorCategories = [
+    {
+        id:1,
+        value:1,
+        name:'Penulis'
+    },
+    {
+        id:2,
+        value:2,
+        name:'Komik'
+    },
+    {
+        id:3,
+        value:3,
+        name:'Fotografer'
+    },
+    {
+        id:4,
+        value:4,
+        name:'Video'
+    },
+]
 
 function FormCreator({nextStep}) {
   const {register, handleSubmit, control,formState:{errors}} = useForm()
@@ -46,6 +68,11 @@ function FormCreator({nextStep}) {
         icon={<ExclamationCircleIcon />}
         register={register}
         rules={{required: true}}
+        categories={creatorCategories}
+        category_id="id"
+        category_value="value"
+        category_label="name"
+        style="primary"
         validation_message= {
           errors.category && <span>Kategori tidak boleh kosong</span>
         }

@@ -1,4 +1,4 @@
-import { ExclamationCircleIcon, ArrowTrendingUpIcon, FolderIcon, CalendarDaysIcon } from '@heroicons/react/24/solid'
+import {  ArrowTrendingUpIcon, FolderIcon, CalendarDaysIcon } from '@heroicons/react/24/solid'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
@@ -23,10 +23,10 @@ const menus = [
     },
   ];
 
+  const renderSidebarMenu = menus.map((menu) =>(
+ <Link to={menu.path} className={`grid grid-cols-1 sm:grid-cols-2 w-fit sm:w-full sm:bg-red-500 sm:mb-5 items-center justify-items-center  py-3 rounded-full`}> {menu.icon} <div className='w-full'>{menu.name}</div> </Link>
+  ))
 function Sidebar() {
-    const renderSidebarMenu = menus.map((menu) =>(
-   <Link to={menu.path} className={`grid grid-cols-1 sm:grid-cols-2 w-fit sm:w-full sm:bg-red-500 sm:mb-5 items-center justify-items-center  py-3 rounded-full`}> {menu.icon} <div className='w-full'>{menu.name}</div> </Link>
-    ))
   return (
     <div className="sidebar-wrapper py-3 sm:py-5 bg-white sm:bg-transparent sm:w-1/2 sm:max-w-xs">
         <div className="sidebar-menu flex flex-row flex-nowrap justify-between px-5 sm:block">
